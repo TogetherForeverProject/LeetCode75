@@ -2,9 +2,13 @@ from timeit import timeit
 from typing import List
 from memory_profiler import memory_usage
 
+
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+        # Get the length of the input list 'nums'
         n = len(nums)
+
+        # Create a new list 'answer' initialized with all ones, which will store the final result
         answer = [1] * n
 
         # Calculate the product of all elements to the left of each element
@@ -19,6 +23,7 @@ class Solution:
             right_product *= nums[i + 1]
             answer[i] *= right_product
 
+        # Return the 'answer' list containing the product of all elements except itself for each element
         return answer
 
 

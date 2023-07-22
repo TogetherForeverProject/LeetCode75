@@ -21,7 +21,7 @@ def test_case_2():
     s = "  hello world  "
     result = solution.reverseWords(s)
     assert result == "world hello"
-    # Your rversed string should not contain leading or trailing spaces
+    # Your reversed string should not contain leading or trailing spaces
 
 def test_case_3():
     solution = Solution()

@@ -1,4 +1,4 @@
-# test/test_problem345.py
+# test/test_problem605.py
 
 import sys
 import os

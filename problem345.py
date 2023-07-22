@@ -4,21 +4,32 @@ from timeit import timeit
 
 class Solution:
     def reverseVowels(self, s: str) -> str:
+        # Create a set of vowels for efficient membership test
         vowels = set("aeiouAEIOU")
+
+        # Convert the input string into a list to modify characters
         s_list = list(s)
+
+        # Initialize two pointers, i and j, to traverse the string from both ends
         i, j = 0, len(s) - 1
 
+        # Traverse the string until the two pointers meet
         while i < j:
+            # Move the left pointer (i) to the right until it points to a vowel
             while i < j and s_list[i] not in vowels:
                 i += 1
+
+            # Move the right pointer (j) to the left until it points to a vowel
             while i < j and s_list[j] not in vowels:
                 j -= 1
 
+            # Swap the vowels pointed by the left (i) and right (j) pointers
             if i < j:
                 s_list[i], s_list[j] = s_list[j], s_list[i]
                 i += 1
                 j -= 1
 
+        # Convert the modified list back to a string and return the result
         return "".join(s_list)
 
 

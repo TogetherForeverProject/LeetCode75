@@ -14,6 +14,10 @@ def test_case_1():
     word1 = "abc"
     word2 = "pqr"
     result = solution.mergeAlternately(word1, word2)
+    # Explanation: the merged string will be merged as so:
+    # word1:  a   b   c
+    # word2:    p   q   r
+    # merged: a p b q c r
     assert result == "apbqcr"
 
 
@@ -22,6 +26,10 @@ def test_case_2():
     word1 = "ab"
     word2 = "pqrs"
     result = solution.mergeAlternately(word1, word2)
+    # Expalanation: Notice that as word2 is longer, "rs" is appended to the end.
+    # word1:  a   b
+    # word2:    p   q  r  s
+    # merged: a p b q  r  s
     assert result == "apbqrs"
 
 
@@ -30,4 +38,8 @@ def test_case_3():
     word1 = "abcd"
     word2 = "pq"
     result = solution.mergeAlternately(word1, word2)
+    # Explanation: Notice that as word1 is longer, "cd" is appended to the end.
+    # word1:  a   b   c  d
+    # word2:    p   q
+    # merged: a p b q c  d
     assert result == "apbqcd"
